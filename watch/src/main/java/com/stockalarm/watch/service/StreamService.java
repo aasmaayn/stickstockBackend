@@ -29,9 +29,10 @@ public class StreamService {
 	@Autowired
 	private SimpMessagingTemplate template;
 
-	@Scheduled(fixedRate = 6000)
+	@Scheduled(fixedRate = 1000)
 	public void fireGreeting() throws IOException {
-//		LOGGER.info(StocksDataMap.getStocksData().size() > 0 ? StocksDataMap.getStocksData().toString() : "Stock data map is empty");
-//		this.template.convertAndSend("/topic/greetings", StocksDataMap.getStocksData().size()> 0 ? StocksDataMap.getStocksData().toString() : "No Data found for any Stock, Please add a Stock.");
+		if(StocksDataMap.getStocksData().isEmpty()) return;
+		LOGGER.info(StocksDataMap.getStocksData().toString());
+		this.template.convertAndSend("/topic/greetings", StocksDataMap.getStocksData());
 	}
 }

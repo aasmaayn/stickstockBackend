@@ -25,10 +25,10 @@ public class WatchController {
 
   @MessageMapping("/hello")
   @SendTo("/topic/greetings")
-  public Greeting greeting(HelloMessage message) throws Exception {
-    System.out.print(message.getName());
-    //addRemoveStock.addStock(message.getName());
-    return new Greeting("Stock received ==> , " + HtmlUtils.htmlEscape(message.getName()) + "!");
+  public Greeting greeting(String stockName) throws Exception {
+//    System.out.print(stockName);
+//    addRemoveStock.addStock(stockName);
+    return null;
   }
   
   

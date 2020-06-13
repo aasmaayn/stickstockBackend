@@ -15,10 +15,10 @@ import com.stockalarm.watch.domain.UserStock.UserStockId;
 @Table(name = "USER_STOCK")
 public class UserStock implements Serializable{
 	@Id
-	@Column(name = "USER")
+	@Column(name = "user")
 	private String user;
 	@Id
-	@Column(name = "STOCK")
+	@Column(name = "user")
 	private String stock;
 	
 	
